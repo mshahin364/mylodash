@@ -1,23 +1,24 @@
 var _ = _ || {};
-_.findIndex = function(array, arg) {
+_.findLastIndex = function(array, arg) {
 	var result = -1;
+	var len = array.length;
 	if (typeof arg === 'string') {
 
-		for (var i = 0, len = array.length; i < len; i++) {
+		for (var i = len-1 ; i >= 0; i--) {
 			if (array[i][arg]) {
 				result = i;
 				break;
 			}
 		}
 	} else if (typeof arg === 'function') {
-		for (var i = 0, len = array.length; i < len; i++) {
+		for (var i = len-1 ; i >= 0; i--) {
 			if (arg(array[i])) {
 				result = i;
 				break;
 			}
 		}
 	} else if (typeof arg === 'object') {
-		for (var i = 0, len = array.length; i < len; i++) {
+		for (var i = len-1 ; i >= 0; i--) {
 			var isMatch = 1;
 			for (var j in arg) {
 				if (arg[j] !== array[i][j]) {
@@ -35,7 +36,7 @@ _.findIndex = function(array, arg) {
 }
 
 /*
-console.log(_.findIndex([{
+console.log(_.findLastIndex([{
 	name: 20
 }, {
 	name: 21
