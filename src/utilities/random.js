@@ -6,6 +6,5 @@ _.random = function(min,max,floating){
 		floating = 1;
 	}
 	randomNum = randomNum * ( max - min ) + min;
-	return floating ? randomNum : Math.floor(randomNum);
-
+	return floating ? randomNum : (Math.floor(randomNum));
 }
