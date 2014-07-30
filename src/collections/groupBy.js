@@ -1,16 +1,16 @@
-_.countBy = function(array,arg,thisArg){
+_.groupBy = function(array,arg,thisArg){
     var result = {};
     var len = array.length;
     if(typeof arg === 'function'){
         for(var i=0;i<len;i++){
             var val = arg(array[i]);
-            result[val] ? result[val].push(array[i]) : result[val] = array[i];
+            result[val] ? ( result[val].push(array[i]) ) : (result[val] = [array[i]] );
         }
     }
     if(typeof arg === 'string'){
         for(var i=0;i<len;i++){
             var val = array[i][arg];
-            result[val] ? result[val].push(array[i]) : result[val] = array[i];
+            result[val] ? ( result[val].push(array[i]) ): (result[val] = [array[i]]);
         }
     }
 
@@ -24,7 +24,7 @@ _.countBy = function(array,arg,thisArg){
                     break;
                 }
             }
-            result[is] ? result[is].push(array[i]) : result[is] =[ array[i] ];
+            result[is] ? (result[is].push(array[i])) : (result[is] =[ array[i] ]);
         }
     }
     return result;
