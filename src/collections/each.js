@@ -1,5 +1,5 @@
 _.each = function(array,callback){
-    for(var i= 0,len=array.length;i<len;i++){
+    for(var i in array){
         callback(arrag[i],i,array);
     }
 }
