@@ -24,5 +24,12 @@ var Base = {
 
         }
         return !!result;
+    },
+    getValue:function(item,arg){
+        if(typeof arg === 'string'){
+            return item[arg];
+        }else if(typeof arg === 'function'){
+            return arg(item);
+        }
     }
 }
