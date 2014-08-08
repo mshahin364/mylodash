@@ -26,7 +26,9 @@ var Base = {
         return !!result;
     },
     getValue:function(item,arg){
-        if(typeof arg === 'string'){
+        if(!arg){
+            return item;
+        }else if(typeof arg === 'string'){
             return item[arg];
         }else if(typeof arg === 'function'){
             return arg(item);
