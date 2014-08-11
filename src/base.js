@@ -33,5 +33,13 @@ var Base = {
         }else if(typeof arg === 'function'){
             return arg(item);
         }
+    },
+    makeArray:function(arg){
+        var len = arg.length;
+        var ret = [];
+        for(var i= 0,len = arg.length;i<len;i++){
+            ret.push(arg[i]);
+        }
+        return ret;
     }
 }
