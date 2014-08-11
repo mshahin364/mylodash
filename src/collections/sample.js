@@ -10,6 +10,5 @@ _.sample = function(collection,size){
         cloneCollection.splice(index,1);
         len--;
     }
-    
     return ret;
 }
