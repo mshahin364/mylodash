@@ -6,7 +6,7 @@ _.shuffle = function(collections){
         index++;
 
         var key = Math.floor(Math.random() * index);
+        ret[index] = ret[key];
         ret[key] = collections[i];
-        ret[index] = collections[i];
     }
 }
