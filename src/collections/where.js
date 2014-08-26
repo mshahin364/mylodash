@@ -10,7 +10,7 @@ function whereInArray(arrSmall,arrBig){
 }
 function whereIsIn (item,arg){
     var isOk = true;
-    
+
     for(var i in arg){
         if(typeof arg[i] ==='[object Array]' && !whereInArray(arg[i],item[i])){
             isOk = false;
