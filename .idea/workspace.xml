@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17dcdcd0-2a4d-445d-997d-0f714c02b37a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/objects/isArguments.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/objects/isArray.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/objects/isBoolean.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/objects/isDate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/objects/isElement.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/objects/isEmpty.js" />
     </list>
     <ignored path="lodash.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,11 +45,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="isElement.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="isElement.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/objects/isElement.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.050938338" vertical-offset="0" max-vertical-offset="746">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="152">
               <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="isEmpty.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/objects/isEmpty.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.22922252" vertical-offset="0" max-vertical-offset="746">
+              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -93,7 +98,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/collections/groupBy.js" />
         <option value="$PROJECT_DIR$/src/collections/every.js" />
         <option value="$PROJECT_DIR$/src/collections/filter.js" />
         <option value="$PROJECT_DIR$/src/collections/find.js" />
@@ -144,6 +148,7 @@
         <option value="$PROJECT_DIR$/src/objects/isArray.js" />
         <option value="$PROJECT_DIR$/src/objects/isDate.js" />
         <option value="$PROJECT_DIR$/src/objects/isElement.js" />
+        <option value="$PROJECT_DIR$/src/objects/isEmpty.js" />
       </list>
     </option>
   </component>
@@ -156,8 +161,8 @@
     <initial>false</initial>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-132" />
-    <option name="y" value="308" />
+    <option name="x" value="87" />
+    <option name="y" value="427" />
     <option name="width" value="1440" />
     <option name="height" value="843" />
   </component>
@@ -326,7 +331,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-132" y="308" width="1440" height="843" extended-state="6" />
+    <frame x="87" y="427" width="1440" height="843" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -369,13 +374,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/collections/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="266">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/collections/max.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
@@ -735,8 +733,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/isElement.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.050938338" vertical-offset="0" max-vertical-offset="746">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="152">
           <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/isEmpty.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22922252" vertical-offset="0" max-vertical-offset="746">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
           <folding />
         </state>
       </provider>
