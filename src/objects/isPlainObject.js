@@ -1,0 +1,3 @@
+_.isPlainObject = function(value){
+
+}
