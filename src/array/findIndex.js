@@ -1,4 +1,3 @@
-var _ = _ || {};
 _.findIndex = function(array, arg) {
 	var result = -1;
 	var len = array.length;

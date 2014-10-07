@@ -1,4 +1,3 @@
-var _ = {};
 _.collect = function(arr,callback){
     var result = [];
     var len = arr.length;

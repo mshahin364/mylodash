@@ -1,4 +1,3 @@
-var _ = {};
 
 function easyMakeArray(value){
     var ret = [];

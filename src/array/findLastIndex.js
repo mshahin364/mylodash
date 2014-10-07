@@ -1,4 +1,3 @@
-var _ = _ || {};
 _.findLastIndex = function(array, arg) {
 	var result = -1;
 	var len = array.length;

@@ -1,1 +1,3 @@
-template.js
+_.template = function(){
+    return ;
+}

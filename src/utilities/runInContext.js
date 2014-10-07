@@ -1,1 +1,3 @@
-_.runInContext = runInContext;
+_.runInContext = function(){
+    return lodash;
+}

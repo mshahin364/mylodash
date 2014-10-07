@@ -1,4 +1,3 @@
-var _ = _ || {};
 function inArray(value,array){
 	if(Array.prototype.indexOf){
 		return array.indexOf(value) !== -1;

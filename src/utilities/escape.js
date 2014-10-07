@@ -1,5 +1,3 @@
-var _ = _ || {};
-
 _.escape = function(str) {
 	return str.replace(/(\&)|(\>)|(\<)|(\')|(\")/g, function(v) {
 		var result = '';

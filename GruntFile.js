@@ -1,15 +1,20 @@
 var grunt = require('grunt');
 grunt.initConfig({
     concat: {
+        options:{
+          banner:"(function(){\n _ = {} ;\n",
+          footer:"\n})()"
+        },
         js: {
+
             src: ['src/*/**.js'],
             dest: 'lodash.js'
         }
     },
     uglify: {
         options: {
-            banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n;(function(){',//添加banner,
-            footer:'})();\n/*!  最后修改于： <%= grunt.template.today("yyyy-mm-dd") %> */'//添加footer
+            banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n;',//添加banner,
+            footer:''//添加footer
         },
         uglodash:{
             files: {

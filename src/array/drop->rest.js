@@ -1,4 +1,4 @@
-var _ = _ || {};
+
 
 
 _.drop = function(array,arg){

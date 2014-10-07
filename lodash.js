@@ -1,5 +1,5 @@
-var _ = lodash || _ || {};
-
+(function(){
+ _ = {} ;
 _.compact = function(arr){
      var tempArr = [];
      for(var i=0 ,len=arr.length;i<len;i++){
@@ -10,7 +10,6 @@ _.compact = function(arr){
      return tempArr;
 }
 // console.log(_.compact([1,'',2,fasle,null,true,false,4,null,{},NaN]));
-var _ = _ || {};
 function inArray(value,array){
 	if(Array.prototype.indexOf){
 		return array.indexOf(value) !== -1;
@@ -38,7 +37,7 @@ _.difference = function(array,values){
 /*
 console.log(_.difference([1,2,4,6,8],[1,6,9,8]));
 */
-var _ = _ || {};
+
 
 
 _.drop = function(array,arg){
@@ -81,7 +80,6 @@ console.log(_.rest([1,2,3,5,8,7,9,3,2,2],function(v){
 console.log(_.rest([{a:1,b:2,c:3},{a:2},{a:5,b:2}],{a:1}));
 
 */ 
-var _ = _ || {};
 _.findIndex = function(array, arg) {
 	var result = -1;
 	var len = array.length;
@@ -131,7 +129,6 @@ console.log(_.findIndex([{
 
 
 */
-var _ = _ || {};
 _.findLastIndex = function(array, arg) {
 	var result = -1;
 	var len = array.length;
@@ -502,7 +499,6 @@ _.all = function(value,arg){
 
     }
 }
-var _ = {};
 
 function easyMakeArray(value){
     var ret = [];
@@ -532,7 +528,6 @@ _.at = function(arr){
 }
 
 // _.at(['a,b','c',1,2,3,4,5],1,4,[5,1,2,[5,2,0]]);
-var _ = {};
 _.collect = function(arr,callback){
     var result = [];
     var len = arr.length;
@@ -542,7 +537,6 @@ _.collect = function(arr,callback){
     }
     return result;
 }
-var _ = {};
 
 _.contains = function(value,arg){
     return value.indexOf(arg) !== -1;
@@ -1245,13 +1239,10 @@ _.values = function(value){
     }
     return re;
 }
-var _ = _ || {};
 
 _.constant = function(o){
 	return o.valueOf();
 }
-createCallback().js
-var _ = _ || {};
 
 _.escape = function(str) {
 	return str.replace(/(\&)|(\>)|(\<)|(\')|(\")/g, function(v) {
@@ -1278,42 +1269,42 @@ _.escape = function(str) {
 		return result;
 	});
 }
-var _ = _ || {};
+
 
 _.identity = function(obj) {
 	return obj;
 }
-var _ = _ || {};
+
 
 _.mixin = function(obj,source) {
 	for(var i in obj){
 		_[i] = obj[i];
 	}
 }
-var _ = _ || {};
+
 var old = _;
 _.noConflict = function() {
 	window._ = old;
 	return this;
 }
-var _ = _ || {};
+
 var old = _;
 _.noop = function(obj) {
 	return;
 }
-var _ = _ || {};
+
 
 _.now = function(){
 	return new Date().getTime();
 }
-var _ = _ || {};
+
 _.parseInt = function(val,radix) {
 	if(typeof val === 'string'){
 		val = val.replace(/^0+/g,'');
 	}
 	return parseInt(val,radix);
 }
-var _ = _ || {};
+
 _.property = function(name){
 	return function(object){
 		return object[name];
@@ -1335,8 +1326,12 @@ _.result = function(object,key){
 	}
 	return object[key];
 }
-_.runInContext = runInContext;
-template.js
+_.runInContext = function(){
+    return lodash;
+}
+_.template = function(){
+    return ;
+}
 _.times = function(time,callback,arg){
 	var array = [];
 	if(toString.call(arg) !== '[object Array]'){
@@ -1377,3 +1372,4 @@ uniqueId = function(per){
 	var currentId = ++initNum;
 	return '' +  (typeof per === 'string' ? (per + initNum) : initNum);
 }
+})()
