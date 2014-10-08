@@ -1,5 +1,5 @@
 (function(){
- _ = {} ;
+ window.lodash =  {} ;
 
 var Base = {
     isMatch:function(item,arg){
@@ -46,7 +46,7 @@ var Base = {
     }
 }
 
-_.compact = function(arr){
+lodash.compact = function(arr){
      var tempArr = [];
      for(var i=0 ,len=arr.length;i<len;i++){
           if(!!arr[i]){
@@ -55,7 +55,7 @@ _.compact = function(arr){
      }
      return tempArr;
 }
-// console.log(_.compact([1,'',2,fasle,null,true,false,4,null,{},NaN]));
+// console.log(lodash.compact([1,'',2,fasle,null,true,false,4,null,{},NaN]));
 function inArray(value,array){
 	if(Array.prototype.indexOf){
 		return array.indexOf(value) !== -1;
@@ -70,7 +70,7 @@ function inArray(value,array){
 		return has;
 	}
 }
-_.difference = function(array,values){
+lodash.difference = function(array,values){
      var tempArr = [];
      for(var i=0 ,len=array.length;i<len;i++){
           if(inArray(array[i],values)){
@@ -81,12 +81,12 @@ _.difference = function(array,values){
 }
 
 /*
-console.log(_.difference([1,2,4,6,8],[1,6,9,8]));
+console.log(lodash.difference([1,2,4,6,8],[1,6,9,8]));
 */
 
 
 
-_.drop = function(array,arg){
+lodash.drop = function(array,arg){
      var tempArr = [];
      arg = arg || 1;
      if(typeof arg === 'number'){
@@ -115,18 +115,18 @@ _.drop = function(array,arg){
      }
      return tempArr;
 }
-_.rest = _.drop;
+lodash.rest = lodash.drop;
 
 /*
 
-console.log(_.rest([1,2,3,5,3,2,2],3));
-console.log(_.rest([1,2,3,5,8,7,9,3,2,2],function(v){
+console.log(lodash.rest([1,2,3,5,3,2,2],3));
+console.log(lodash.rest([1,2,3,5,8,7,9,3,2,2],function(v){
 	return v > 5;
 }));
-console.log(_.rest([{a:1,b:2,c:3},{a:2},{a:5,b:2}],{a:1}));
+console.log(lodash.rest([{a:1,b:2,c:3},{a:2},{a:5,b:2}],{a:1}));
 
 */ 
-_.findIndex = function(array, arg) {
+lodash.findIndex = function(array, arg) {
 	var result = -1;
 	var len = array.length;
 	if (typeof arg === 'string') {
@@ -163,7 +163,7 @@ _.findIndex = function(array, arg) {
 }
 
 /*
-console.log(_.findIndex([{
+console.log(lodash.findIndex([{
 	name: 20
 }, {
 	name: 21
@@ -175,7 +175,7 @@ console.log(_.findIndex([{
 
 
 */
-_.findLastIndex = function(array, arg) {
+lodash.findLastIndex = function(array, arg) {
 	var result = -1;
 	var len = array.length;
 	if (typeof arg === 'string') {
@@ -212,7 +212,7 @@ _.findLastIndex = function(array, arg) {
 }
 
 /*
-console.log(_.findLastIndex([{
+console.log(lodash.findLastIndex([{
 	name: 20
 }, {
 	name: 21
@@ -224,7 +224,7 @@ console.log(_.findLastIndex([{
 
 
 */
-_.first = function(array,arg){
+lodash.first = function(array,arg){
     var ret = [];
     if(!arg){
         ret = arg[0];
@@ -263,7 +263,7 @@ function getOnce(array){
     return ret;
 }
 
-_.flatten = function(array,arg){
+lodash.flatten = function(array,arg){
     var ret = [];
 
     for(var i in array){
@@ -284,7 +284,7 @@ _.flatten = function(array,arg){
 
 
 }
-_.indexOf = function(array,item,from){
+lodash.indexOf = function(array,item,from){
     from = from || 0;
     var re = -1;
     if(Array.prototype.indexOf){
@@ -298,7 +298,7 @@ _.indexOf = function(array,item,from){
     }
     return re;
 }
-_.intersection = function(){
+lodash.intersection = function(){
     arg = arguments;
     var len = arg.length;
     var ret = arg[0];
@@ -333,7 +333,7 @@ function checkItem(item,arg){
         return has;
     }
 }
-_.last = function(array,arg){
+lodash.last = function(array,arg){
     var re;
     var len = array.length;
     arg = arg || 0;
@@ -348,7 +348,7 @@ _.last = function(array,arg){
         }
     }
 }
-_.lastIndexOf = function(array,item,from){
+lodash.lastIndexOf = function(array,item,from){
     from = from || array.length;
     var re = -1;
     if(Array.prototype.indexOf){
@@ -362,7 +362,7 @@ _.lastIndexOf = function(array,item,from){
     }
     return re;
 }
-_.object = function(arrayKey,arrayValue){
+lodash.object = function(arrayKey,arrayValue){
     var len = arrayKey.length;
     var re = {};
     for(var i = 0;i<len;i++){
@@ -370,7 +370,7 @@ _.object = function(arrayKey,arrayValue){
     }
     return re;
 }
-_.pull = function(array){
+lodash.pull = function(array){
     var arg = Base.makeArray(arguments).slice(1);
     var re = [];
     for(var i=0,len=array.length;i<len;i++){
@@ -380,7 +380,7 @@ _.pull = function(array){
     }
     return re;
 }
-_.range = function(from,to,rate){
+lodash.range = function(from,to,rate){
 
     if(typeof to === 'undefined'){
         to = from;
@@ -415,7 +415,7 @@ function checkItem(item,arg){
         return has;
     }
 }
-_.remove = function(array,arg){
+lodash.remove = function(array,arg){
     var re;
     var len = array.length;
 
@@ -428,7 +428,7 @@ _.remove = function(array,arg){
     }
     return re;
 }
-_.union = function(){
+lodash.union = function(){
     var arg = Base.makeArray(arguments);
     var re = arg[0];
     for(var i = 1,len=arg.length;i<len;i++){
@@ -461,7 +461,7 @@ function uniqGetItem(item,arg){
         return has;
     }
 }
-_.uniq = function(array,arg){
+lodash.uniq = function(array,arg){
     var len = array.length;
     var re = [];
     var arrVal = [];
@@ -475,7 +475,7 @@ _.uniq = function(array,arg){
     }
     return re;
 }
-_.without = function(array){
+lodash.without = function(array){
     var re = [];
     var arg = Base.makeArray(arguments).slice(1);
     for(var i= 0,len = array.length;i<len;i++){
@@ -485,7 +485,7 @@ _.without = function(array){
     }
     return re;
 }
-_.zip = function(){
+lodash.zip = function(){
     var arg = Base.makeArray(arguments);
     var re = [];
     var baseLen = arg[0].length;
@@ -498,7 +498,7 @@ _.zip = function(){
     }
     return re;
 }
-_.all = function(value,arg){
+lodash.all = function(value,arg){
     // var typeof
     var result;
     var isArray = (toString.call(value) === '[object Array]');
@@ -557,7 +557,7 @@ function easyMakeArray(value){
     return ret;
 }
 
-_.at = function(arr){
+lodash.at = function(arr){
     var args = easyMakeArray(arguments).slice(1);
     var result = [];
     for(var i= 0,len=args.length;i<len;i++){
@@ -573,8 +573,8 @@ _.at = function(arr){
     return result;
 }
 
-// _.at(['a,b','c',1,2,3,4,5],1,4,[5,1,2,[5,2,0]]);
-_.collect = function(arr,callback){
+// lodash.at(['a,b','c',1,2,3,4,5],1,4,[5,1,2,[5,2,0]]);
+lodash.collect = function(arr,callback){
     var result = [];
     var len = arr.length;
     for(var i= 0;i<len;i++){
@@ -584,12 +584,12 @@ _.collect = function(arr,callback){
     return result;
 }
 
-_.contains = function(value,arg){
+lodash.contains = function(value,arg){
     return value.indexOf(arg) !== -1;
 }
 
-_.include = _.contains
-_.countBy = function(array,arg,thisArg){
+lodash.include = lodash.contains
+lodash.countBy = function(array,arg,thisArg){
     var result = {};
     var len = array.length;
     if(typeof arg === 'function'){
@@ -621,9 +621,9 @@ _.countBy = function(array,arg,thisArg){
     return result;
 }
 
-// _.countBy([{name:1},{name:1},{name:2},{hehe:1,age:1}],{name:1});
+// lodash.countBy([{name:1},{name:1},{name:2},{hehe:1,age:1}],{name:1});
 
-_.detect = function(collection,arg){
+lodash.detect = function(collection,arg){
     var len = collection.length;
     var result ;
     for(var i=0;i<len;i++){
@@ -634,17 +634,17 @@ _.detect = function(collection,arg){
     }
     return result;
 }
-_.each = function(array,callback){
+lodash.each = function(array,callback){
     for(var i in array){
         callback(arrag[i],i,array);
     }
 }
-_.eachRight = function(array,callback){
+lodash.eachRight = function(array,callback){
     for(var len = array.length,i=len-1;i++;i>=0){
         callback(array[i],i,array);
     }
 }
-_.every = function(collection,arg){
+lodash.every = function(collection,arg){
     var is = true;
     for(var i= 0,len=collection.length;i<len;i++){
         if(!Base.isMatch(collection[i],arg)){
@@ -655,7 +655,7 @@ _.every = function(collection,arg){
     }
     return is;
 }
-_.filter = function(collection,arg){
+lodash.filter = function(collection,arg){
     var result = [];
     for(var i= 0,len=collection.length;i<len;i++){
         if(Base.isMatch(collection[i],arg)){
@@ -665,7 +665,7 @@ _.filter = function(collection,arg){
     }
     return result;
 }
-_.find = function(collection,arg){
+lodash.find = function(collection,arg){
     var result;
     for(var i= 0,len=collection.length;i<len;i++){
         if(Base.isMatch(collection[i],arg)){
@@ -676,7 +676,7 @@ _.find = function(collection,arg){
     }
     return result;
 }
-_.findLast = function(collection,arg){
+lodash.findLast = function(collection,arg){
     var result;
     for(var len=collection.length,i= len-1;i>=0;i--){
         if(Base.isMatch(collection[i],arg)){
@@ -687,7 +687,7 @@ _.findLast = function(collection,arg){
     }
     return result;
 }
-_.groupBy = function(array,arg,thisArg){
+lodash.groupBy = function(array,arg,thisArg){
     var result = {};
     var len = array.length;
     if(typeof arg === 'function'){
@@ -719,9 +719,9 @@ _.groupBy = function(array,arg,thisArg){
     return result;
 }
 
-// _.countBy([{name:1},{name:1},{name:2},{hehe:1,age:1}],{name:1});
+// lodash.countBy([{name:1},{name:1},{name:2},{hehe:1,age:1}],{name:1});
 
-_.invoke = function(array,callback,args){
+lodash.invoke = function(array,callback,args){
     var ret = [];
     var newArg = [];
     for(var i= 2,len=arguments.length;i<len;i++){
@@ -743,7 +743,7 @@ _.invoke = function(array,callback,args){
 }
 
 
-_.map=function(collections,arg){
+lodash.map=function(collections,arg){
     var ret = [];
     for (var i in collections) {
 
@@ -752,7 +752,7 @@ _.map=function(collections,arg){
     return ret;
 }
 
-_.max = function(collections,arg){
+lodash.max = function(collections,arg){
     var maxItem;
     var maxValue;
     var currentValue;
@@ -771,7 +771,7 @@ _.max = function(collections,arg){
     return maxItem;
 
 }
-_.min = function(collections,arg){
+lodash.min = function(collections,arg){
     var minItem;
     var minValue;
     var currentValue;
@@ -790,7 +790,7 @@ _.min = function(collections,arg){
     return minItem;
 
 }
-_.pluck = function(collections,property){
+lodash.pluck = function(collections,property){
     var ret = [];
     for(var i in collections){
         ret.push(collections[i][property]);
@@ -798,7 +798,7 @@ _.pluck = function(collections,property){
     return ret;
 }
 // previousValue, currentValue, index, array
-_.reduce = function(array,callback){
+lodash.reduce = function(array,callback){
     var result //= array[0];
     for(var i in array){
         if(!result){
@@ -809,9 +809,9 @@ _.reduce = function(array,callback){
     }
     return result;
 }
-_.foldl = _.reduce;
+lodash.foldl = lodash.reduce;
 // previousValue, currentValue, index, array
-_.reduceRight = function(array,callback){
+lodash.reduceRight = function(array,callback){
     var result ;//= array[0];
     for(var len = array.length,i=len-1;i>=0;i--){
         if(!result){
@@ -822,8 +822,8 @@ _.reduceRight = function(array,callback){
     }
     return result;
 }
-_.foldR = _.reduceRight;
-_.reject = function(collection,arg) {
+lodash.foldR = lodash.reduceRight;
+lodash.reject = function(collection,arg) {
     var ret = [];
     for(var i in collection){
         if(Base.isMatch(collection[i],arg)){
@@ -832,7 +832,7 @@ _.reject = function(collection,arg) {
     }
     return ret;
 }
-_.sample = function(collection,size){
+lodash.sample = function(collection,size){
     var ret = [];
     var len = collection.length;
     if(!size)size = 1;
@@ -846,7 +846,7 @@ _.sample = function(collection,size){
     }
     return ret;
 }
-_.shuffle = function(collections){
+lodash.shuffle = function(collections){
     var ret = [];
     var len = collections.length;
     var index = -1;
@@ -858,7 +858,7 @@ _.shuffle = function(collections){
         ret[key] = collections[i];
     }
 }
-_.size = function(collections){
+lodash.size = function(collections){
     var type = typeof collections;
     var len = 0;
 
@@ -871,7 +871,7 @@ _.size = function(collections){
     }
     return len;
 }
-_.some = function(arr,arg){
+lodash.some = function(arr,arg){
     var isOK = 0;
     if(typeof arg === 'function' && typeof arg(1)==='boolean'){
         isOK = arr.filter(function(v){
@@ -912,7 +912,7 @@ function isAllNum(array,key){
     }
     return is;
 }
-_.sortBy = function(collections,callback){
+lodash.sortBy = function(collections,callback){
     var newArray = [];
     var newKv = [];
 
@@ -930,7 +930,7 @@ _.sortBy = function(collections,callback){
         }
     }
 }
-_.toArray = function(collections){
+lodash.toArray = function(collections){
     var ret = [];
     for(var i in collections){
         ret.push(collections[i]);
@@ -961,7 +961,7 @@ function whereIsIn (item,arg){
     }
     return isOk;
 }
-_.where = function(collection,arg){
+lodash.where = function(collection,arg){
     var ret = [];
     // 原方法也只支持数组
     for(var i in collection){
@@ -972,14 +972,14 @@ _.where = function(collection,arg){
     }
     return ret;
 }
-_.after = function(n,func){
+lodash.after = function(n,func){
 
 }
-_.bind = function(func,thisArg,arg){
+lodash.bind = function(func,thisArg,arg){
 
     func.apply(this,arg);
 }
-_.delay = function(func,wait){
+lodash.delay = function(func,wait){
     var len = arguments.length;
     var arg = [];
     for(var i=2;i<len;i++){
@@ -989,7 +989,7 @@ _.delay = function(func,wait){
         func.apply(this,arg)
     },wait);
 }
-_.once = function(func){
+lodash.once = function(func){
 
     var has = 0;
     return function(){
@@ -1000,7 +1000,7 @@ _.once = function(func){
         has = 1;
     }
 }
-_.functions = function(object){
+lodash.functions = function(object){
     var re = [];
     for(var i in object){
         if(typeof object[i] === 'function'){
@@ -1009,13 +1009,13 @@ _.functions = function(object){
     }
     return re;
 }
-_.merge = function(oBase,oSource){
+lodash.merge = function(oBase,oSource){
     for(var i in oSource){
         oBase[i] = oSource[i];
     }
     return oBase;
 }
-_.assign = function(obj, sources, callback) {
+lodash.assign = function(obj, sources, callback) {
 	var args = arguments;
 	var len = args.length;
 	var forLen = len;
@@ -1059,7 +1059,7 @@ function baseClone(value,isDeep){
     return value;
 }
 
-_.clone = function(value,isDeep,callback){
+lodash.clone = function(value,isDeep,callback){
     if(callback){
         return callback(value);
     }
@@ -1069,13 +1069,13 @@ _.clone = function(value,isDeep,callback){
 
 
 
-_.create = function(objBase,objProp){
+lodash.create = function(objBase,objProp){
     for(var i in objProp){
         objBase[i] = objProp[i];
     }
     return objBase;
 }
-_.defaults = function(objBase,objProp){
+lodash.defaults = function(objBase,objProp){
     for(var i in objProp){
         if( !objBase.hasOwnProperty(i) ){
             objBase[i] = objProp[i]
@@ -1083,7 +1083,7 @@ _.defaults = function(objBase,objProp){
     }
     return;
 }
-_.findKey = function(obj,arg){
+lodash.findKey = function(obj,arg){
     var re ;
     for(var i in obj){
        if( Base.isMatch(obj[i],arg)) {
@@ -1094,22 +1094,22 @@ _.findKey = function(obj,arg){
     return re;
 }
 
-_.forIn = function(object,callback){
+lodash.forIn = function(object,callback){
     for(var i in object){
         callback(object[i],i);
     }
     return false;
 }
-_.forOwn = function(object,callback){
+lodash.forOwn = function(object,callback){
     for(var i in object){
         callback( i,object[i] );
     }
     return false;
 }
-_.has = function(object,key){
+lodash.has = function(object,key){
     return object.hasOwnProperty(key);
 }
-_.invert = function(object){
+lodash.invert = function(object){
     var re = {};
     var key;
     for(var i in object){
@@ -1118,23 +1118,23 @@ _.invert = function(object){
     }
     return re;
 }
-_.isArguments = function(value){
+lodash.isArguments = function(value){
     return value && typeof value == 'object' && typeof value.length == 'number' &&
         toString.call(value) == '[object Object]' || false;
 }
-_.isArray = function(value){
+lodash.isArray = function(value){
     return value && toString.call(value) === '[object Array]';
 }
-_.isBoolean = function(value){
+lodash.isBoolean = function(value){
     return value && toString.call(value) === '[object Boolean]';
 }
-_.isDate = function(value){
+lodash.isDate = function(value){
     return value && typeof value === 'object' && toString.call(value) === '[object Date]';
 }
-_.isElement = function(value) {
+lodash.isElement = function(value) {
     return value && typeof value === 'object' && /\[object\sHTML\w+Element\]/.test(toString.call(value));
 }
-_.isEmpty = function(value){
+lodash.isEmpty = function(value){
     if(toString.call(value) === '[object Array]'){
         return !!value.length;
     }
@@ -1148,7 +1148,7 @@ _.isEmpty = function(value){
     }
     return !!value;
 }
-_.isEqual = function(o1,o2,callback){
+lodash.isEqual = function(o1,o2,callback){
     if(callback && typeof callback === 'function'){
         return callback(o1,o2);
     }
@@ -1172,45 +1172,45 @@ _.isEqual = function(o1,o2,callback){
     return true;
 
 }
-_.isFinite = function(value){
+lodash.isFinite = function(value){
     var valueStr = value.toString().trim();
     return /^[(\-)|(\+)]*\d+$/.test(valueStr)
 }
-_.isFunction = function(value){
+lodash.isFunction = function(value){
     return typeof  value === 'function';
 }
-_.isNaN = function(value){
+lodash.isNaN = function(value){
     return typeof value === 'number' && isNaN(value);
 }
-_.isNull = function(value){
+lodash.isNull = function(value){
     return value === null;
 }
-_.isNumber = function(value){
+lodash.isNumber = function(value){
     return typeof value === 'number';
 }
-_.isObject = function(value){
+lodash.isObject = function(value){
     return typeof value === 'object';
 }
-_.isPlainObject = function(value){
+lodash.isPlainObject = function(value){
 
 }
-_.isRegExp = function(value){
+lodash.isRegExp = function(value){
     return toString.call(value) === '[object RegExp]';
 }
-_.isString = function(value){
+lodash.isString = function(value){
     return typeof value === 'string';
 }
-_.isUndefined = function(value){
+lodash.isUndefined = function(value){
     return typeof value === 'undefined';
 }
-_.keys = function(value){
+lodash.keys = function(value){
     var re = [];
     for(var i in value){
         re.push(i)
     }
     return re;
 }
-_.mapValues = function(value,arg){
+lodash.mapValues = function(value,arg){
     var re = {};
 
     for(var i in value){
@@ -1220,7 +1220,7 @@ _.mapValues = function(value,arg){
     return re;
 
 }
-_.omit = function(value,arg){
+lodash.omit = function(value,arg){
     var re = {};
 
     for(var i in value){
@@ -1242,14 +1242,14 @@ _.omit = function(value,arg){
     }
     return re;
 }
-_.pairs = function(value){
+lodash.pairs = function(value){
     var re = [];
     for(var i in value){
         re.push([i,value[i]]);
     }
     return re;
 }
-_.omit = function(value,arg){
+lodash.omit = function(value,arg){
     var re = {};
 
     for(var i in value){
@@ -1271,14 +1271,14 @@ _.omit = function(value,arg){
     }
     return re;
 }
-_.transform = function(value,callback){
+lodash.transform = function(value,callback){
     var re = {};
     for(var i in value){
         re[i] = callback(value,value[i],i);
     }
     return re;
 }
-_.values = function(value){
+lodash.values = function(value){
     var re = [];
     for(var i in value){
         re.push(value[i]);
@@ -1286,11 +1286,11 @@ _.values = function(value){
     return re;
 }
 
-_.constant = function(o){
+lodash.constant = function(o){
 	return o.valueOf();
 }
 
-_.escape = function(str) {
+lodash.escape = function(str) {
 	return str.replace(/(\&)|(\>)|(\<)|(\')|(\")/g, function(v) {
 		var result = '';
 		switch (v) {
@@ -1317,46 +1317,46 @@ _.escape = function(str) {
 }
 
 
-_.identity = function(obj) {
+lodash.identity = function(obj) {
 	return obj;
 }
 
 
-_.mixin = function(obj,source) {
-	for(var i in obj){
-		_[i] = obj[i];
+lodash.mixin = function(obj,source) {
+	for(var i in source){
+		obj[i] = source[i];
 	}
 }
 
-var old = _;
-_.noConflict = function() {
+var old = lodash;
+lodash.noConflict = function() {
 	window._ = old;
 	return this;
 }
 
 var old = _;
-_.noop = function(obj) {
+lodash.noop = function(obj) {
 	return;
 }
 
 
-_.now = function(){
+lodash.now = function(){
 	return new Date().getTime();
 }
 
-_.parseInt = function(val,radix) {
+lodash.parseInt = function(val,radix) {
 	if(typeof val === 'string'){
 		val = val.replace(/^0+/g,'');
 	}
 	return parseInt(val,radix);
 }
 
-_.property = function(name){
+lodash.property = function(name){
 	return function(object){
 		return object[name];
 	}
 }
-_.random = function(min,max,floating){
+lodash.random = function(min,max,floating){
 	var randomNum = Math.random();
 	min = +min || 0;
 	max = +max || 1;
@@ -1366,19 +1366,19 @@ _.random = function(min,max,floating){
 	randomNum = randomNum * ( max - min ) + min;
 	return floating ? randomNum : (Math.floor(randomNum));
 }
-_.result = function(object,key){
+lodash.result = function(object,key){
 	if(typeof object[key] ==='function'){
 		return object[key]();
 	}
 	return object[key];
 }
-_.runInContext = function(){
+lodash.runInContext = function(){
     return lodash;
 }
-_.template = function(){
+lodash.template = function(){
     return ;
 }
-_.times = function(time,callback,arg){
+lodash.times = function(time,callback,arg){
 	var array = [];
 	if(toString.call(arg) !== '[object Array]'){
 		arg = [arg];
@@ -1388,7 +1388,7 @@ _.times = function(time,callback,arg){
 		array.push(callback.apply(this,arg));
 	}
 }
-_.unescape = function(str) {
+lodash.unescape = function(str) {
 	return str.replace(/(\&amt\;)|(\&lt\;)|(\&gt\;)|(\&quot\;)|(\&\#39\;)/g,function(v){
 		var result = '';
 		switch (v) {
@@ -1418,4 +1418,5 @@ uniqueId = function(per){
 	var currentId = ++initNum;
 	return '' +  (typeof per === 'string' ? (per + initNum) : initNum);
 }
+_ = lodash;
 })()

@@ -1,10 +1,11 @@
 {
   "name":"lodash",
-  "version":"1.0",
+  "version":"1.0.0",
   "author":"sirzxj",
-  "devDependencies": {
+  "dependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.7"
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-text-replace":"~0.3.2"
   }
 }
