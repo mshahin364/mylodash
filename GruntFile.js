@@ -7,7 +7,7 @@ grunt.initConfig({
         },
         js: {
 
-            src: ['src/*/**.js'],
+            src: ['src/base.js','src/*/**.js'],
             dest: 'lodash.js'
         }
     },
@@ -16,7 +16,7 @@ grunt.initConfig({
             banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n;',//添加banner,
             footer:''//添加footer
         },
-        uglodash:{
+        target:{
             files: {
                 './lodash-min.js': ['./lodash.js']
             }
@@ -29,4 +29,4 @@ grunt.loadNpmTasks('grunt-contrib-uglify');
 
 
 
-grunt.registerTask('default', [ 'concat','uglify:uglodash' ]);
+grunt.registerTask('default', [ 'concat','uglify' ]);
