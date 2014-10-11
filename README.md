@@ -22,3 +22,7 @@ Imitate from [lodash](http://lodash.com/docs)
 
 ## 有问题的
 isElement return value && value.nodeType === 1 || false; isElement({nodeType:1}) 得到 true
+修改为：
+_.isElement = function(value) {
+    return value && typeof value === 'object' && /\[object\sHTML\w+Element\]/.test(toString.call(value));
+}
