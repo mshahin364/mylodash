@@ -10,7 +10,7 @@ Imitate from [lodash](http://lodash.com/docs)
 * last
 ## 觉得没有必要
 * uniq 不用sort 参数
-* object 模块 findLastIndex 感觉没有必要，毕竟各个浏览器for in 的顺序都不一致 https://github.com/lodash/lodash/issues/714
+* object 模块 findLastIndex 感觉没有必要，毕竟各个浏览器for in 的顺序都不一致，和作者也反馈过 https://github.com/lodash/lodash/issues/714
 
 ## 看不懂的，感觉也用不着的
 * xor 
