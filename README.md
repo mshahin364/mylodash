@@ -14,15 +14,22 @@ Imitate from [lodash](http://lodash.com/docs)
 
 ## 看不懂的，感觉也用不着的
 * xor 
+https://lodash.com/docs#xor
 
-* function isNumber(value) {
+* isNumber
+```
+function isNumber(value) {
       return typeof value == 'number' ||
         value && typeof value == 'object' && toString.call(value) == numberClass || false;
     }
-
+```
 ## 有问题的
+```
 isElement return value && value.nodeType === 1 || false; isElement({nodeType:1}) 得到 true
+```
 修改为：
+```
 _.isElement = function(value) {
     return value && typeof value === 'object' && /\[object\sHTML\w+Element\]/.test(toString.call(value));
 }
+```
