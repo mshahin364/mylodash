@@ -1,2 +1,2 @@
 ## Lodash
-Imitate from [lodash](https://github.com/lodash/lodash)
+Imitate from [lodash](http://lodash.com/docs)
